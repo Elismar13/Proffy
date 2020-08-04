@@ -24,11 +24,12 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 60%;
 
         @media (min-height: 700px) {
-        :root {
-            font-size: 62.5%;
+            :root {
+                font-size: 62.5%;
+            }
         }
     }
-    }
+
 
     * {
         margin: 0;
