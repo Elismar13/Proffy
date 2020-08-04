@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { GlobalStyles } from './globalStyled';
-import Main from './pages/Main';
+import Landing from './pages/Landing';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
+    <Landing />
     <GlobalStyles />
   </React.StrictMode>,
   document.getElementById('root')
