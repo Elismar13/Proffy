@@ -10,11 +10,15 @@ import {
     PageContainer,
     PageLandingContent,
     LogoContainer,
+    LogoImg,
+    LogoText,
     HeroImage,
     ButtonsContainer,
     Study,
+    StudyIcon,
     GiveClases,
-    TotalConnections 
+    TotalConnections,
+    PurpleHeart
     } from './styled';
 
 
@@ -23,25 +27,26 @@ const Landing: React.FC = () => {
         <PageContainer>
             <PageLandingContent>
                 <LogoContainer>
-                    <img src={logoImg} alt="Proffy"/>
-                    <h2>Sua plataforma de estudos online</h2>
+                    <LogoImg src={logoImg} alt="Proffy"/>
+                    <LogoText>Sua plataforma de estudos online</LogoText>
                 </LogoContainer>
 
                 <HeroImage src={landingImg} alt="Plataforma de estudos"/>
 
                 <ButtonsContainer>
                     <Study>
-                        <img src={studyIcon} alt="Estudar"/>
+                        <StudyIcon src={studyIcon} alt="Estudar"/>
                         Estudar
                     </Study>
                     <GiveClases>
-                        <img src={giveClassification} alt="Estudar"/>
-                        Estudar
+                        <StudyIcon src={giveClassification} alt="Dar aulas"/>
+                        Dar aulas
                     </GiveClases>
                 </ButtonsContainer>
 
                 <TotalConnections>
-                    total de 200 conexões realizadas <img src={purpleHeart} alt="Coração Roxo"/> 
+                    Total de 200 conexões realizadas 
+                    <PurpleHeart src={purpleHeart} alt="Coração Roxo"/> 
                 </TotalConnections>
             </PageLandingContent>
         </PageContainer>
