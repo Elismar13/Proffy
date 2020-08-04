@@ -22,6 +22,12 @@ export const GlobalStyles = createGlobalStyle`
         --color-box-footer: #FAFAFC;
 
         font-size: 60%;
+
+        @media (min-height: 700px) {
+        :root {
+            font-size: 62.5%;
+        }
+    }
     }
 
     * {
@@ -51,11 +57,7 @@ export const GlobalStyles = createGlobalStyle`
         font: 500 1.6rem Poppins;
     }
 
-    @media (min-height: 700px) {
-        :root {
-            font-size: 62.5%;
-        }
-    }
+
 `;
 
 export const Container = styled.div`

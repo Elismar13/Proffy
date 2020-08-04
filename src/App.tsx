@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { GlobalStyles, Container } from './globalStyled';
-import Landing from './pages/Landing';
+import Routes from './routes';
 
 const App: React.FC = () => {
     return (
-        <Landing />
+        <Routes />
     );
 }
 
