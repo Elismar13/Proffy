@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const PageContainer = styled.div`
     width: 100vw;
@@ -37,7 +38,7 @@ export const ButtonsContainer = styled.div`
     margin: 3.2rem 0;
 `;
 
-export const Study = styled.a`
+export const Study = styled(Link)`
     width: 30rem;
     height: 10.4rem;
     border-radius: 0.8rem;
@@ -48,8 +49,11 @@ export const Study = styled.a`
     align-items: center;
     justify-content: center;
 
+    color: var(--color-button-text);
     background: var(--color-primary-lighter);
     transition: background-color 0.2s;
+
+    text-decoration: none;
 
     :hover {
         background: var(--color-primary-light);
@@ -60,7 +64,7 @@ export const StudyIcon = styled.img`
 
 `;
 
-export const GiveClases = styled.a`
+export const GiveClases = styled(Link)`
     width: 30rem;
     height: 10.4rem;
     border-radius: 0.8rem;
@@ -70,8 +74,11 @@ export const GiveClases = styled.a`
     align-items: center;
     justify-content: center;
 
+    color: var(--color-button-text);
     background: var(--color-secundary);
     transition: background-color 0.2s;
+
+    text-decoration: none;
 
     :hover {
         background: var(--color-secundary-dark);
