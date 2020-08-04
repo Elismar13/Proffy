@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
     :root {
@@ -56,4 +56,9 @@ export const GlobalStyles = createGlobalStyle`
             font-size: 62.5%;
         }
     }
+`;
+
+export const Container = styled.div`
+    width: 90vw;
+    max-width: 700px;
 `;
