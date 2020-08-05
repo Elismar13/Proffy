@@ -1,51 +1,53 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
-export const PageTeacherList = styled.div`
-    height: 100vh;
-    width: 100vw;
+export const SearchTeachers = styled.div`
+    margin-top: 3.2rem;
+
+    @media (min-width: 700px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 16px;
+        position: absolute;
+        bottom: -44px;
+    }
 `;
+export const InputBlock = styled.div`
+    position: relative;
+    margin-top: 1.6rem;
+    :first-child {
+        margin-top: 0;   
+    }
 
-export const Header = styled.div`
-    display: flex;
+    :focus-within::after {
+        width: calc(100% - 3.2rem);
+        height: 2px;
+        content: '';
+        background: var(--color-primary-light);
+        position: absolute;
+        left: 1.6rem;
+        right: 1.6rem;
+        bottom: 0;
+    }
 
-    flex-direction: column;
-    background-color: var(--color-primary);
-`;
+    > label {
+        font-size: 1.4rem;
+        color: var(--color-text-in-primary);
+    }
 
-export const TopBar = styled.div`
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+    > input {
+        width: 100%;
+        height: 5.6rem;
+        margin-top: 0.8rem;
+        border-radius: 0.8rem;
+        background: var(--color-input-background);
+        border: 1px solid var(--color-in-line-white);
+        outline: 0;
+        padding: 0 1.6rem;
+        font: 1.6rem Archivo;
+    }
 
-    align-items: center;
-    color: var(--color-in-text-primary);
-    padding: 1.6rem 0;
-`;
-
-export const BackLink = styled(Link)`
-    height: 3.2rem;
-    transition: opacity 0.2;
-
-    :hover {
-        opacity: 0.6;
+    @media (min-width: 700px) {
+        margin-top: 0;
     }
 `;
 
-export const Logo = styled.img`
-    height: 1.6rem;
-`;
-
-export const HeaderContent = styled.div`
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    margin: 3.2rem auto;
-`;
-
-export const HeaderText = styled.strong`
-    font: 700 3.6rem Archivo;
-    line-height: 4.2rem;
-    color: var(--color-title-in-primary);
-`;

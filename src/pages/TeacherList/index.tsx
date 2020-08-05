@@ -1,27 +1,26 @@
 import React from 'react';
-import { PageTeacherList, Header, TopBar, BackLink, Logo, HeaderContent, HeaderText } from './styled';
 
-import logoImg from '../../assets/images/logo.svg';
-import backIcon from '../../assets/images/icons/back.svg';
+import PageHeader from '../../components/Header';
+import { SearchTeachers, InputBlock } from './styled';
 
 const TeacherForm: React.FC = () => {
     return (
-        <PageTeacherList>
-            <Header>
-                <TopBar>
-                    <BackLink to="/" >
-                        <img src={backIcon}  alt="Voltar" />
-                    </BackLink>
-                    <Logo src={logoImg} alt="Logo"/>
-                </TopBar>
-
-                <HeaderContent>
-                    <HeaderText>
-                      Estes sao os profits disponíveis.
-                    </HeaderText>                    
-                </HeaderContent>
-            </Header>
-        </PageTeacherList>
+        <PageHeader title="Estes sao os profits disponíveis.">
+            <SearchTeachers>
+                <InputBlock>
+                    <label htmlFor="subject">Materia</label>
+                    <input type="text" id="subject" />
+                </InputBlock>
+                <InputBlock>
+                    <label htmlFor="week_day">Dia da Semana</label>
+                    <input type="text" id="week_day" />
+                </InputBlock>
+                <InputBlock>
+                    <label htmlFor="time">Hora</label>
+                    <input type="text" id="time" />
+                </InputBlock>
+            </SearchTeachers>
+        </PageHeader>
     );
 }
 
