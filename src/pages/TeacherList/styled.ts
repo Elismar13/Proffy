@@ -8,7 +8,7 @@ export const SearchTeachers = styled.div`
         grid-template-columns: repeat(3, 1fr);
         column-gap: 16px;
         position: absolute;
-        bottom: -44px;
+        bottom: -28px;
     }
 `;
 export const InputBlock = styled.div`
