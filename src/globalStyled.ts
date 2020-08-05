@@ -58,8 +58,6 @@ export const GlobalStyles = createGlobalStyle`
         font: 500 1.6rem Poppins;
         color: var(--color-text-base);
     }
-
-
 `;
 
 export const Container = styled.div`

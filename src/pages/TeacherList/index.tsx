@@ -1,9 +1,10 @@
 import React from 'react';
 
 import PageHeader from '../../components/Header';
-import { Main, TeacherContainer, SearchTeachers,  InputBlock, TeacherItem, UserInfo } from './styled';
+import TeacherItem from '../../components/TeacherItem';
 
-import whatsAppIcon from '../../assets/images/icons/whatsapp.svg';
+import { Main, TeacherContainer, SearchTeachers,  InputBlock} from './styled';
+
 
 const TeacherForm: React.FC = () => {
     return (
@@ -26,31 +27,7 @@ const TeacherForm: React.FC = () => {
             </PageHeader>
 
             <Main>
-                <TeacherItem>
-                    <header>
-                        <img />
-                        <UserInfo>
-                            <strong>Elismar</strong>
-                            <span>Química</span>
-                        </UserInfo>
-                    </header>
-
-                    <p>
-                        Entusiasta das mellhores tecnologias 
-                        <br /> <br/>
-                        Isso ae
-                    </p>
-
-                    <footer>
-                        <p>
-                            Preco hora <strong>R$89,00</strong>
-                        </p>
-                        <button type="button">
-                            <img src={whatsAppIcon} alt="Entrar em contato"/>
-                            Entrar em contato
-                        </button>
-                    </footer>
-                </TeacherItem>
+                <TeacherItem />
             </Main>
         </TeacherContainer>
     );
