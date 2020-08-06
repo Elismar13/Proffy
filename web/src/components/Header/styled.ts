@@ -67,4 +67,13 @@ export const HeaderText = styled.strong`
     font: 700 3.6rem Archivo;
     line-height: 4.2rem;
     color: var(--color-title-in-primary);
+    max-width: 350px;
+`;
+
+export const TextDescription = styled.p`
+    max-width: 30rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: var(--color-text-in-primary);
+    margin-top: 1.6rem;
 `;
