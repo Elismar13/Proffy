@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 
 import db from '../database/connection';
 import convertHourToMinutes from '../utils/convertHourToMinutes';
+import ListClasses from './classes/listClasses';
 
 interface ScheduleItem {
     week_day: number,
@@ -17,29 +18,18 @@ export default class ClassesControllers {
         const subject = filters.subject as string;
         const time = filters.time as string;
 
-        if(!week_day || !subject || !time) {
-            return response.status(400).send({
-                error: 'Missing filters to search classes'
-            });
-        }
-
         const timeInMinutes = convertHourToMinutes(time);
 
-        const classes = await db('classes')
-            .whereExists(function() {
-                this.select('class_schedule.*')
-                    .from('class_schedule')
-                    .whereRaw('`class_schedule`.`class_id` = `classes`.`id`')
-                    .whereRaw('`class_schedule`.`week_day` = ??', [Number(week_day)])
-                    .whereRaw('`class_schedule`.`from` <= ??', [timeInMinutes])
-                    .whereRaw('`class_schedule`.`to` > ??', [timeInMinutes])
-            })
-            .where('classes.subject', '=', subject)
-            .join('users', 'classes.user_id', '=', 'users.id')
-            .select(['classes.*', 'users.*']);
-
-
-        return response.send(classes);
+        try {
+            const indexClasses = new ListClasses(week_day, subject, time);
+            const classes = indexClasses.listQuery(timeInMinutes);
+            return response.send(classes);
+        } catch (error) {
+            console.log(error)
+            return  response.status(400).send({
+                error: error,
+            });
+        }
     }
 
     async create(request: Request, response: Response) {
