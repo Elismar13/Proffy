@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 
-import db from '../database/connection';
-import convertHourToMinutes from '../utils/convertHourToMinutes';
-import ListClasses from './classes/listClasses';
+import db from '../../database/connection';
+import convertHourToMinutes from '../../utils/convertHourToMinutes';
+import ListClasses from './ListClasses';
 
 interface ScheduleItem {
     week_day: number,
