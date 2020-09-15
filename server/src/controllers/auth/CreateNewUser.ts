@@ -1,10 +1,12 @@
 import db from '../../database/connection';
+import Password from './Password';
 
-export default class CreateNewUser {
+export default class CreateNewUser extends Password {
   async create(email: string, password: string) {
+    const cryptedPassword = this.crypt(password);
     const user = await db('users').insert({
       email,
-      password
+      password: cryptedPassword
     });
 
     return user;
