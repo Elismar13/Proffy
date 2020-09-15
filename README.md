@@ -11,6 +11,16 @@ Proffy é um sistema que busca conectar estudantes do ensino médio com professo
 
 ![](../header.png)
 
+## :heavy_plus_sign: Extras deste repositório
+
+ - back-end
+    - Autenticação JWT (em desenvolvimento);
+    - Cadrasto usando e-mail (em desenvolvimento);
+    - Criptografia da senha do usuário;
+
+  - front-end e mobile:
+    - Styled components;
+    - Animações (em desenvolvimento)
 ## :package: Pré-requisitos
 
 - [Node.js](https://nodejs.org/en/) v12.06 ou superior;
