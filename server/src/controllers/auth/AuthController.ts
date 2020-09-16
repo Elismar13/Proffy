@@ -45,6 +45,7 @@ export default class UserAuth {
 
     if(!userAlreadyExists) {
       const user = await this.createNewUser.create(email, password);
+      return response.status(201).send(user);
     }
 
     return response.status(400).send({ error: "email already exists" });

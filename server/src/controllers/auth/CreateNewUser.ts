@@ -13,6 +13,6 @@ export default class CreateNewUser extends Password {
       password: cryptedPassword
     });
 
-    return user;
+    return user[0];
   }
 }
