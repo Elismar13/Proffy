@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 require('dotenv-safe').config();
 
-
 export default class TokenGenerator {
   constructor(){
 
@@ -9,7 +8,7 @@ export default class TokenGenerator {
 
   generateJwt(userDatabaseId: number) {
     const token = jwt.sign({ userDatabaseId }, process.env.SECRET, {
-      expiresIn: 600 //expires in 10min
+      expiresIn: 900 //expires in 15min
     });
 
     return token;
