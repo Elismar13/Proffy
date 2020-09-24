@@ -4,8 +4,4 @@ export default class Password {
   crypt(password: string): string {
     return md5(password);
   }
-
-  decrypt(password: string): string {
-    return md5(password);
-  }
 }
