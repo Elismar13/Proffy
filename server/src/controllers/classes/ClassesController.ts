@@ -1,36 +1,22 @@
 import { Request, Response } from 'express';
 
-import convertHourToMinutes from '../../utils/convertHourToMinutes';
 import CreateClasseData from './CreateClasseData';
-import ListClasses from './ListClasses';
+import ListClasseData from './ListClasseData';
 
 export default class ClassesControllers {
   createClassData: CreateClasseData;
+  listClasseData: ListClasseData;
 
   constructor() {
     this.createClassData = new CreateClasseData();
+    this.listClasseData = new ListClasseData();
+
     this.create = this.create.bind(this);
+    this.index = this.index.bind(this);
   }
 
   async index(request: Request, response: Response) {
-    const filters = request.query;
-
-    const week_day = filters.week_day as string;
-    const subject = filters.subject as string;
-    const time = filters.time as string;
-
-    const timeInMinutes = convertHourToMinutes(time);
-
-    try {
-      const indexClasses = new ListClasses(week_day, subject, time);
-      const classes = indexClasses.listQuery(timeInMinutes);
-      return response.send(classes);
-    } catch (error) {
-      console.log(error)
-      return  response.status(400).send({
-          error: error,
-      });
-    }
+    await this.listClasseData.index(request, response);
   }
 
   async create(request: Request, response: Response) {
