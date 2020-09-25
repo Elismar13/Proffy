@@ -20,7 +20,7 @@ class ListClasseData {
     } catch (error) {
       console.log(error)
       return  response.status(400).send({
-          error: error,
+        error: error,
       });
     }
   }

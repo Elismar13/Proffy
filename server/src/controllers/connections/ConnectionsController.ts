@@ -1,25 +1,29 @@
 import { Request, Response } from 'express';
 import db from '../../database/connection';
+import CreateNewConnection from './CreateNewConnection';
+import ListConnections from './ListConnections';
 
 
 export default class ConnectionsController {
-    async index(request: Request, response: Response) {
-        const totalConnections = await db('connections').count('* as total');
+  createNewConnection: CreateNewConnection;
+  listConnections: ListConnections;
 
-        const { total } = totalConnections[0];
+  constructor() {
+    this.createNewConnection = new CreateNewConnection();
+    this.listConnections = new ListConnections();
 
-        return response.send({
-            total
-        });
-    }
+    this.index = this.index.bind(this);
+    this.create = this.create.bind(this);
+  }
 
-    async create(request: Request, response: Response) {
-        const { user_id } = request.body;
+  async index(request: Request, response: Response) {
+    const total = await this.listConnections.list();
+    return response.send(total)
+  }
 
-        await db('connections').insert({
-            user_id
-        });
-
-        return response.status(201).send();
-    }
+  async create(request: Request, response: Response) {
+    const { user_id } = request.body;
+    await this.createNewConnection.create(user_id);
+    return response.status(201).send();
+  }
 }
