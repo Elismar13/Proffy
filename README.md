@@ -9,18 +9,48 @@
 
 Proffy é um sistema que busca conectar estudantes do ensino médio com professores disposto a ensina-los. O intuito da aplicação é ajudar os estudantes no processo de formação e pré-vestibular. Desenvolvido ao longo da NLW2 :rocket:!
 
+# :computer: Web
+
+<table style="width:100%">
+  <tr>
+
+  <td align="center"><img src="./.github/web-landing.png" height="auto" width="500" /></td>
+
+  <td align="center"><img src="./.github/web-list.png" height="auto" width="500" /></td>
+
+  </tr>
+</table>
+
+---
+
+# :iphone: Mobile
+
+<table style="width:100%">
+  <tr>
+
+  <td align="center"><img src="./.github/mobile-splash.png" height="auto" width="250" /></td>
+
+  <td align="center"><img src="./.github/mobile-home.png" height="auto" width="250" /></td>
+
+  <td align="center"><img src="./.github/mobile-favorites.png" height="auto" width="250" /></td>
+
+  </tr>
+</table>
+
 ![](../header.png)
 
 ## :heavy_plus_sign: Extras deste repositório
 
- - back-end
-    - Autenticação JWT (em desenvolvimento);
-    - Cadrasto usando e-mail (em desenvolvimento);
-    - Criptografia da senha do usuário;
+- back-end
 
-  - front-end e mobile:
-    - Styled components;
-    - Animações (em desenvolvimento)
+  - Autenticação JWT (em desenvolvimento);
+  - Cadrasto usando e-mail (em desenvolvimento);
+  - Criptografia da senha do usuário;
+
+- front-end e mobile:
+  - Styled components;
+  - Animações (em desenvolvimento)
+
 ## :package: Pré-requisitos
 
 - [Node.js](https://nodejs.org/en/) v12.06 ou superior;
@@ -28,26 +58,30 @@ Proffy é um sistema que busca conectar estudantes do ensino médio com professo
 - Um gerenciador de pacotes de sua preferência (npm/yarn);
 
 ## :rocket: Instalação
-#### Backend 
+
+#### Backend
 
 ```sh
 cd backend/
 #instala as dependências de terceiros
-yarn install 
+yarn install
 ```
 
-Agora você precisa das migrations (versionamento) do banco de dados. 
+Agora você precisa das migrations (versionamento) do banco de dados.
 Para isto, rode:
+
 ```sh
 # Criando as migrations
 yarn knex:migrate
 ```
 
 Inicie o servidor do projeto:
+
 ```sh
 # Criando as migrations
 yarn start
 ```
+
 #### Web
 
 ```sh
@@ -66,19 +100,17 @@ yarn install
 expo start ou yarn start
 ```
 
-
 ## :chart: Desafios
-
 
 - [ ] Tela de Splash
 - [ ] Update do layout
-    - [ ] Login
-        - [ ] Lembrar de mim
-    - [ ] Entrar
-    - [ ] Sucesso
+  - [ ] Login
+    - [ ] Lembrar de mim
+  - [ ] Entrar
+  - [ ] Sucesso
 - [ ] Autenticação
-    - [ ] Web
-    - [ ] Mobile
+  - [ ] Web
+  - [ ] Mobile
 - [ ] Logout
 - [ ] Professores favoritos
 - [ ] Sistema de avaliação
@@ -88,20 +120,18 @@ expo start ou yarn start
 - [ ] Horários de atendimento
 - [ ] Deploy
 
-
 ## :tada: Histórico de lançamentos
 
-* 0.1.0
-    * backend, mobile e web integrados
-* 0.0.1
-    * Trabalho em andamento
+- 0.1.0
+  - backend, mobile e web integrados
+- 0.0.1
+  - Trabalho em andamento
 
 ## Meta
 
 Elismar13 – [@thushima](https://twitter.com/)
 
 Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
-
 
 ## :rocket: Contributing
 
